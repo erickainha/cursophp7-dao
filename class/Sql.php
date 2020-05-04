@@ -20,11 +20,11 @@ private function setParam($statement, $key, $value){
 	$statement->bindParam($key, $value);
 }
 
-public function query($rawQuery, $params = array()){
+public function query($rawQuery, $params = array()) {
 
 	$stmt = $this->conn->prepare($rawQuery);
 	$this->setParams($stmt, $params);
-	$stmt->execute();
+	//$stmt->execute();
 	return $stmt;
 	///foreach ($params as $key => $value) {
 		//$stmt->bindParam($key, $value);
